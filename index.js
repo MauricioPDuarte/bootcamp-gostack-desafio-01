@@ -39,9 +39,9 @@ server.post("/projects", (req, res) => {
     id,
     title,
     tasks: []
-  }
+  };
 
-  projects.push(project)
+  projects.push(project);
 
   res.json(project);
 });
