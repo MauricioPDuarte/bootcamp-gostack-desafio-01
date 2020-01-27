@@ -1,10 +1,13 @@
 const express = require('express');
-
 const server = express();
 
 server.use(express.json());
 
 const projects = [];
+
+/* 
+* Middlewares
+*/
 
 function checkProjectExists(req, res, next) {
   const { id } = req.params;
@@ -24,6 +27,10 @@ function logRequests(res, req, next){
 };
 
 server.use(logRequests);
+
+/* 
+* CRUD
+*/
 
 server.post("/projects", (req, res) => {
   const { id, title } = req.body;
